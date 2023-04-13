@@ -1,0 +1,478 @@
+/* css reset */
+
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+
+:root {
+
+    --clr-secondary-200: hsl(0, 0%, 98%);
+    --clr-secondary-500: hsl(0, 0%, 41%);
+    --clr-secondary-800: hsl(0, 0%, 8%);
+
+    --clr-opaque-200: hsla(0, 0%, 41%, 0.9);
+
+    --ff-primary: 'Epilogue', sans-serif;
+    --ff-weight-500: 500;
+    --ff-weight-700: 700;
+}
+
+
+body {
+    display: grid;
+    background-color: var(--clr-secondary-200);
+    font-family: var(--ff-primary);
+    font-size: 1.125rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+        'one one'
+        'three two'
+        'three two';
+
+    
+}
+
+.grid-item:nth-child(1) {
+    grid-area: one;
+}
+
+.grid-item:nth-child(2) {
+    grid-area: two;
+}
+
+.grid-item:nth-child(3) {
+    grid-area: three;
+}
+
+
+
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    font-size: 80%;
+
+}
+
+
+.primary-navigation {
+    display: flex;
+}
+
+nav {
+    display: flex;
+    color: var(--clr-secondary-500);
+
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+ul {
+    list-style: none;
+
+    
+}
+
+
+
+li {
+    margin: 1rem;
+    float: left;
+}
+
+li a {
+    text-decoration: none;
+    color: var(--clr-secondary-500);
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+
+
+.register {
+    border-style: solid; 
+    border-radius: 1rem;
+    border-width: thin;
+    padding: 0.5rem;
+
+    margin-top: 0;
+
+}
+
+
+
+.login {
+    margin-top: 0.75rem;
+}
+
+.logo {
+    padding: 1rem;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.link {
+    background: none;
+    border-style: none;
+    color: var(--clr-secondary-500);
+}
+
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + .25rem);
+    background-color: var(--clr-secondary-200);
+    padding: .75rem;
+    border-radius: .25rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+    opacity: 0;
+    line-height: 2rem;
+
+}
+
+
+.dropdown-menu__company {
+    left: 0;
+    right: -2rem;
+}
+
+
+.dropdown.active > .link + .dropdown-menu {
+    opacity: 1;
+}
+
+.dropdown-item {
+    display: flex;
+    white-space: nowrap;
+    padding-right: 1rem;
+    color: var(--clr-secondary-500);
+}
+
+.dropdown-icon {
+    display: inline;
+    height: 1rem;
+    margin-right: 1rem;
+}
+
+.icon-wrapper{
+    width: 1rem;
+    margin-right: 1rem;
+}
+
+
+.collapsible-arrow {
+    display: inline;
+    height: 6px;
+    width: 10px;
+    background-image: url("./images/icon-arrow-down.svg");
+    background-repeat: no-repeat;
+    padding: 0.2rem;
+
+}
+
+.dropdown.active > .link > .collapsible-arrow {
+
+    background-image: url("./images/icon-arrow-up.svg");
+}
+
+.active:hover {
+    color: var(--clr-secondary-800);
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+main p {
+    color: var(--clr-secondary-500);
+    font-weight: var(--ff-weight-500);
+}
+
+.main__button {
+
+    color: var(--clr-secondary-200);
+    background-color: var(--clr-secondary-800);
+    padding: 0.75rem 1.5rem 0.75rem 1.5rem;
+    border-radius: 1rem;
+    border-style: none;
+}
+
+.main__button:hover {
+    background-color: var(--clr-secondary-200);
+    color: var(--clr-secondary-800);
+    border-style: solid; 
+    cursor: pointer;
+}
+
+.client-logos {
+    gap: 2rem;
+    margin-bottom: 5rem;
+
+}
+
+
+
+@media (max-width: 50em) {
+
+
+    nav {
+        position: fixed;
+        inset: 0 0 0 35%;
+        background: var(--clr-secondary-200);
+        flex-direction: column;
+        justify-content: start;
+
+        /* take this off to make visible */
+        transform: translateX(100%);
+    }
+
+
+    nav[data-visible="true"] {
+        transform: translateX(0%);
+    }
+    .primary-navigation {
+        flex-direction: column;
+        margin-top: 3rem;
+        margin-left: -2rem;
+
+    }
+
+    body[data-dark="true"] {
+        background-color: var(--clr-opaque-200);
+    }
+
+
+
+    .dropdown-menu {
+        position: absolute;
+        box-shadow: none;
+    }
+
+
+    .collapsible > .dropdown > .link  {
+        padding-left: 0;
+    }
+
+    .dropdown.active > .link + .dropdown-menu {
+        position: relative;
+        margin-bottom: -1rem;
+        margin-left: 1rem;
+    }
+    
+    .auth {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        margin-right: 50%;
+    }
+
+    .auth li {
+        width: 12rem;
+    }
+
+    .login {
+        text-align: center;
+    }
+
+    .register {
+        
+        text-align: center;
+        margin: 0;
+        width: 100%;
+    
+    }
+
+    .grid-container {
+        grid-template-areas: 
+            'one'
+            'two'
+            'three';
+    }
+
+    main {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        gap: 1rem;
+
+    }
+
+    .main__title {
+
+        font-size: 175%;
+        text-align: center;
+    }
+
+    .main__content {
+        text-align: center;
+        font-size: 90%;
+    }
+
+    .main__button {
+        width: 45%;
+        margin: auto;
+    }
+
+    .client-logos > img {
+        width: 25%;
+        margin-top: 1.5rem;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        z-index: 9999;
+
+        background-color: transparent;
+
+        background-image: url("images/icon-menu.svg");
+        background-repeat: no-repeat;
+
+        width: 2rem;
+        border: 0;
+        aspect-ratio: 1;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url("images/icon-close-menu.svg");
+        position: fixed;
+    }
+
+}
+
+@media (min-width: 50em) {
+
+    header {
+        padding: 1rem;
+    }
+    main {
+        padding: 5rem;
+        margin-left: 5rem;
+    }
+
+    .main__title {
+        font-size: 400%;
+        line-height: normal;
+    }
+
+
+    .main__content {
+        font-size: 125%;
+        margin-right: 5rem;
+    }
+
+    .main__button {
+        width: 30%;
+    }
+
+    section {
+        margin-right: 8rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 60% 40%;
+    }
+
+    .client-logos {
+        height: 1.5rem;
+    }
+
+    
+
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+
+  .attribution {
+    font-size: 0.85rem;
+    position: fixed;
+    margin-top: 2rem;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    background-color: rgb(223, 223, 223);
+  }

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+  <script src="script.js" defer></script>
+
+
+</head>
+<body id="body" class="grid-container" data-dark="false">
+
+
+  
+
+  <header id="header" class="flex primary-header grid-item">
+    <div class="logo">
+      <img src="./images/logo.svg" alt="logo">
+    </div>
+
+
+    <button class="mobile-nav-toggle" aria-controls="nav primary-navigation" aria-expanded="false">
+      <span class="sr-only">
+        Menu
+      </span>
+    </button>
+
+    <nav id="nav" data-visible="false">
+      <ul class="primary-navigation" id="primary-navigation">
+        <li class="collapsible">
+          <div class="dropdown" data-dropdown>
+            <button class="link active" data-dropdown-button>
+              Features
+              <img class="collapsible-arrow active" id="collapsible-arrow" alt="" data-arrow>
+            </button>
+
+            <div class="dropdown-menu dropdown-menu__features" id="dropdown-menu">
+              <div class="dropdown-item">
+                <div class="icon-wrapper">
+                  <img src="./images/icon-todo.svg" class="dropdown-icon" alt="icon-todo">
+                </div>
+                Todo List
+              </div>
+              <div class="dropdown-item" id="calendar">
+                <div class="icon-wrapper">
+                  <img src="./images/icon-calendar.svg" class="dropdown-icon" alt="icon-calendar">
+                </div>
+                Calendar
+              </div>
+              <div class="dropdown-item">
+                <div class="icon-wrapper">
+                  <img src="./images/icon-reminders.svg" class="dropdown-icon" alt="icon-reminders">
+                </div>
+                Reminders
+              </div>
+              <div class="dropdown-item">
+                <div class="icon-wrapper">
+                  <img src="./images/icon-planning.svg" class="dropdown-icon" alt="icon-planning">
+                </div>
+                Planning
+              </div>
+            </div>
+          </div>
+          
+          
+        </li>
+        <li class="collapsible">
+          <div class="dropdown" data-dropdown>
+            <button class="link active" data-dropdown-button>
+              Company
+              <img class="collapsible-arrow" alt="">
+            </button>
+            <div class="dropdown-menu dropdown-menu__company">
+              <div class="dropdown-item">History</div>
+              <div class="dropdown-item">Our Team</div>
+              <div class="dropdown-item">Blog</div>
+            </div>
+          </div>
+          
+          
+          
+        </li>
+        <li class="active">Careers</li>
+        <li class="active">About</li>
+      </ul>
+
+
+      <ul class="auth" id="auth">
+        <li class="login active">Login</li>
+        <li class="register active">Register</li>
+      </ul>
+    </nav>
+    
+    
+  </header>
+
+  <section id="section" class="grid-item">
+    <picture class="section__image">
+      <source media="(max-width:50em)" srcset="./images/image-hero-mobile.png" alt="image-hero-mobile">
+      <img src="./images/image-hero-desktop.png" alt="image-hero-desktop">
+    </picture>
+  </section>
+  
+  <main id="main" class="grid-item">
+    
+    <h1 class="main__title">
+      Make remote work
+    </h1>
+    
+    <p class="main__content">
+      Get your team in sync, no matter your location. Streamline processes, 
+      create team rituals, and watch productivity soar.
+    </p>
+    
+    <button class="main__button">
+      Learn more
+    </button>
+<!-- databiz audiophile meet maker -->
+
+
+    <div class="client-logos flex">
+      <img src="./images/client-databiz.svg" alt="client-databiz">
+      <img src="./images/client-audiophile.svg" alt="client-audiophile">
+      <img src="./images/client-meet.svg" alt="client-meet">
+      <img src="./images/client-maker.svg" alt="client-maker">
+    </div>
+
+
+  </main>
+
+
+  
+  
+  <footer id="footer" class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/pwaycuilis">Paul Waycuilis</a>.
+  </footer>
+  
+</body>
+</html>
